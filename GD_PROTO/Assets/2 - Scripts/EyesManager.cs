@@ -6,9 +6,13 @@ public class EyesManager : MonoBehaviour
 {
     public static EyesManager Instance;
 
+    public EyePosition startEyes;
+
     private void Awake()
     {
         Instance = this;
+
+        ChangeEyeOffset(startEyes);
     }
 
     public enum EyePosition { normal, happy, angry, dead }
