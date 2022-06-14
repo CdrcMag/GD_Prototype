@@ -36,6 +36,11 @@ public class TextManager : MonoBehaviour
     private void Start()
     {
         EyesManager.Instance.ChangeEyeOffset(EyesManager.EyePosition.happy);
+
+        for(int i = 0; i < images.Length; i++)
+        {
+            images[i].SetActive(false);
+        }
     }
 
     private void UpdateCpt()
@@ -49,7 +54,6 @@ public class TextManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && !isWriting && !isDone)
         {
-
             Main();
         }
     }
@@ -111,6 +115,40 @@ public class TextManager : MonoBehaviour
             isDone = true;
             fleche.SetActive(false);
         }
+        if (currentId == 4)
+        {
+            images[3].SetActive(true);
+        }
+
+        if (currentId == 6)
+        {
+            images[3].SetActive(false);
+            images[0].SetActive(true);
+            AnimationManager.Instance.PlayAnim("Pump");
+        }
+
+        if (currentId == 11)
+        {
+            images[0].SetActive(false);
+        }
+
+        if (currentId == 12)
+        {
+            AnimationManager.Instance.PlayAnim("Pump");
+            images[1].SetActive(true);
+        }
+        if (currentId == 13)
+        {
+            images[2].SetActive(true);
+        }
+
+        if (currentId == 15)
+        {
+            AnimationManager.Instance.PlayAnim("Pump");
+        }
     }
 
+    
+
+    public GameObject[] images = new GameObject[0];
 }
