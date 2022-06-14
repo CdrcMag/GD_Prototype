@@ -18,7 +18,7 @@ public class TextManager : MonoBehaviour
     public string[] texts = new string[3];
     private int currentId = 0;
     private bool isWriting = false;
-    private bool isDone = false;
+    public bool isDone = false;
 
     private void Awake()
     {
@@ -49,16 +49,20 @@ public class TextManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && !isWriting && !isDone)
         {
-            StartCoroutine(IDisplayLetters(c, currentId));
 
-            AddOn();
-
-            if(currentId + 1 < texts.Length)
-                currentId++;
-
+            Main();
         }
     }
 
+    public void Main()
+    {
+        StartCoroutine(IDisplayLetters(c, currentId));
+
+        AddOn();
+
+        if (currentId + 1 < texts.Length)
+            currentId++;
+    }
 
 
     IEnumerator IDisplayLetters(char[] c, int id)
@@ -101,10 +105,11 @@ public class TextManager : MonoBehaviour
 
         if(currentId == 2)
         {
-            isWriting = true;
             AI_Manager.Instance.GoToPosition(0);
             CameraManager.Instance.GoToPosition();
             AnimationManager.Instance.PlayAnim("Walk");
+            isDone = true;
+            fleche.SetActive(false);
         }
     }
 

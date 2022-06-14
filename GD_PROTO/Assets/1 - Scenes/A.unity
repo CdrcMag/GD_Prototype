@@ -163,6 +163,8 @@ MonoBehaviour:
   texts:
   - "Bonjour ! Bienvenue dans cette introduction \xE0 la spectroscopie."
   - "Je m\u2019occuperai de te toi aujourd'hui. Allez viens !"
+  - 
+  - Nous y voila.
   - "Pour faire court, la spectroscopie astronomique c\u2019est l\u2019\xE9tude de
     la lumi\xE8re qu\u2019une \xE9toile \xE9met."
   - "Cela nous donne alors des informations sur sa composition et la mati\xE8re se
@@ -185,6 +187,7 @@ MonoBehaviour:
     d\u2019hydrog\xE8ne."
   - "Et voila ! Tu as maintenant les bases pour d\xE9terminer la composition des
     \xE9toiles ! Maintenant, pratiquons. "
+  isDone: 0
 --- !u!4 &20407751
 Transform:
   m_ObjectHideFlags: 0

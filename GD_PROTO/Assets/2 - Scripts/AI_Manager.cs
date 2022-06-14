@@ -34,6 +34,9 @@ public class AI_Manager : MonoBehaviour
         {
             AnimationManager.Instance.PlayAnim("Idle");
             StartCoroutine(RotateT());
+            GetComponent<TextManager>().isDone = false;
+            GetComponent<TextManager>().fleche.SetActive(true);
+            GetComponent<TextManager>().Main();
             mainState = false;
         }
     }
