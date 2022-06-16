@@ -36,7 +36,8 @@ public class TextManager : MonoBehaviour
 
     private void Start()
     {
-        EyesManager.Instance.ChangeEyeOffset(EyesManager.EyePosition.happy);
+        if(EyesManager.Instance)
+            EyesManager.Instance.ChangeEyeOffset(EyesManager.EyePosition.happy);
 
         for(int i = 0; i < images.Length; i++)
         {
@@ -103,57 +104,57 @@ public class TextManager : MonoBehaviour
     {
         if(currentId == 1)
         {
-            EyesManager.Instance.ChangeEyeOffset(EyesManager.EyePosition.normal);
-            AnimationManager.Instance.PlayAnim("Idle");
+            if (EyesManager.Instance) EyesManager.Instance.ChangeEyeOffset(EyesManager.EyePosition.normal);
+            if(AnimationManager.Instance) AnimationManager.Instance.PlayAnim("Idle");
         }
 
 
         if(currentId == 2)
         {
-            AI_Manager.Instance.GoToPosition(0);
-            CameraManager.Instance.GoToPosition();
-            AnimationManager.Instance.PlayAnim("Walk");
+            if (AI_Manager.Instance) AI_Manager.Instance.GoToPosition(0);
+            if (CameraManager.Instance) CameraManager.Instance.GoToPosition();
+            if (AnimationManager.Instance) AnimationManager.Instance.PlayAnim("Walk");
             isDone = true;
             fleche.SetActive(false);
         }
         if (currentId == 4)
         {
-            images[3].SetActive(true);
+            if(images.Length > 0) images[3].SetActive(true);
         }
 
         if (currentId == 6)
         {
-            images[3].SetActive(false);
-            images[0].SetActive(true);
-            AnimationManager.Instance.PlayAnim("Pump");
+            if (images.Length > 0) images[3].SetActive(false);
+            if (images.Length > 0) images[0].SetActive(true);
+            if (AnimationManager.Instance) AnimationManager.Instance.PlayAnim("Pump");
         }
 
         if (currentId == 11)
         {
-            images[0].SetActive(false);
+            if (images.Length > 0) images[0].SetActive(false);
         }
 
         if (currentId == 12)
         {
-            AnimationManager.Instance.PlayAnim("Pump");
-            images[1].SetActive(true);
+            if (AnimationManager.Instance) AnimationManager.Instance.PlayAnim("Pump");
+            if (images.Length > 0) images[1].SetActive(true);
         }
         if (currentId == 13)
         {
-            images[2].SetActive(true);
+            if (images.Length > 0) images[2].SetActive(true);
         }
 
         if (currentId == 15)
         {
-            AnimationManager.Instance.PlayAnim("Pump");
             
-            StartCoroutine(IWait());
         }
 
         if(currentId == 16)
         {
-            //Transition
-            
+            if (AnimationManager.Instance) AnimationManager.Instance.PlayAnim("Pump");
+
+            StartCoroutine(IWait());
+
         }
     }
 

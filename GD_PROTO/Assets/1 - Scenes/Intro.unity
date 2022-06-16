@@ -185,8 +185,9 @@ MonoBehaviour:
     d'une \xE9toile qu'on vient tout juste d'observ\xE9e."
   - "Les raies correspondent, on peut donc en d\xE9duire que ce gaz est compos\xE9
     d'h\xE9lium."
-  - "Et voila ! Tu as maintenant les bases pour d\xE9terminer la composition des
-    \xE9toiles ! Maintenant, pratiquons. "
+  - "Et voila ! Tu as maintenant les bases pour d\xE9terminer la composition de l'atmosph\xE8re
+    des \xE9toiles ! "
+  - "Maintenant, \xE0 ton tour !"
   isDone: 0
   t: {fileID: 1722264615}
   images:
@@ -1031,7 +1032,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089460160}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0145998, y: 1.287033, z: -3.054277}
+  m_LocalPosition: {x: 1.0145998, y: 1.271, z: -3.054277}
   m_LocalScale: {x: 0.23092455, y: 0.23092455, z: 0.23092455}
   m_Children: []
   m_Father: {fileID: 925774304}

@@ -36,7 +36,7 @@ public class MainManager : MonoBehaviour
     public void PointerEnterImage(int id)
     {
         int a = id + 1;
-        t.text = "Etude : etoile " + a;
+        t.text = "Etude : étoile " + a;
 
         currentSpectre.sprite = spectres[id];
         currentSpectreId = id;
