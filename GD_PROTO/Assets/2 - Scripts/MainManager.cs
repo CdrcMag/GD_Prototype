@@ -12,13 +12,15 @@ public class MainManager : MonoBehaviour
 
     private int currentSpectreId;
 
-    [Header("Spectres")]
     public Sprite[] spectres = new Sprite[0];
     public Image[] spectresEmission = new Image[0];
     public Sprite[] spectresEmissionStock = new Sprite[0];
+    public Image[] EtoilesFaites = new Image[0];
 
     //Bonnes réponses
     public string[] goodAnswers = new string[3];
+
+    public GameObject[] etoiles;
 
 
 
@@ -26,13 +28,15 @@ public class MainManager : MonoBehaviour
     {
         t.text = "";
 
+        PointerEnterImage(0);
 
 
     }
 
     public void PointerEnterImage(int id)
     {
-        t.text = "Etoile " + id;
+        int a = id + 1;
+        t.text = "Etude : etoile " + a;
 
         currentSpectre.sprite = spectres[id];
         currentSpectreId = id;
@@ -131,7 +135,39 @@ public class MainManager : MonoBehaviour
         }
 
         print(resultat);
+
+        if(resultat)
+        {
+            ResultatCorrect();
+        }
+        else
+        {
+            ResultatIncorrect();
+        }
     }
 
+    private void ResultatCorrect()
+    {
+        //Reset les spectres
+        foreach (Image i in spectresEmission)
+            i.sprite = spectresEmissionStock[0];
+
+        //Afficher correct
+
+        //Delete l'étoile
+        Destroy(etoiles[currentSpectreId]);
+
+        EtoilesFaites[currentSpectreId].color = new Color32(0x69, 0xC8, 0x72, 0x92);
+
+        //Update le nbr total d'étoiles faites
+        //Deselectionner etoile
+        currentSpectre.sprite = spectresEmissionStock[0];
+
+    }
+
+    private void ResultatIncorrect()
+    {
+
+    }
 
 }

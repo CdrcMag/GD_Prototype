@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TextManager : MonoBehaviour
 {
@@ -145,10 +146,26 @@ public class TextManager : MonoBehaviour
         if (currentId == 15)
         {
             AnimationManager.Instance.PlayAnim("Pump");
+            
+            StartCoroutine(IWait());
+        }
+
+        if(currentId == 16)
+        {
+            //Transition
+            
         }
     }
 
-    
+    IEnumerator IWait()
+    {
+        yield return new WaitForSeconds(5f);
+        StartCoroutine(t.IFadeOut());
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
+    }
+
+    public Transition t;
 
     public GameObject[] images = new GameObject[0];
 }
