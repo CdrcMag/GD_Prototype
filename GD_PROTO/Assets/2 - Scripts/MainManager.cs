@@ -22,6 +22,7 @@ public class MainManager : MonoBehaviour
 
     public GameObject[] etoiles;
 
+    public GameObject finalText;
 
 
     private void Start()
@@ -156,12 +157,19 @@ public class MainManager : MonoBehaviour
 
         //Delete l'étoile
         Destroy(etoiles[currentSpectreId]);
+        
 
         EtoilesFaites[currentSpectreId].color = new Color32(0x69, 0xC8, 0x72, 0x92);
+
+        Color32 c = new Color32(0x69, 0xC8, 0x72, 0x92);
+        if (EtoilesFaites[0].color == c && EtoilesFaites[1].color == c && EtoilesFaites[2].color == c)
+            finalText.SetActive(true);
 
         //Update le nbr total d'étoiles faites
         //Deselectionner etoile
         currentSpectre.sprite = spectresEmissionStock[0];
+
+
 
     }
 
