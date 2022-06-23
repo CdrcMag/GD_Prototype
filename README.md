@@ -1,4 +1,5 @@
-# GD_Prototype
+# Prototype Game Design I
+### Introduction à la spectroscopie astronomique
 
 ## Introduction
 Ce projet est un prototype de jeu sérieux destiné à vulgariser les notions fondamentales de spectroscopie astronomique. Vous incarnez un robot chargé d’analyser et de déterminer la composition chimique d’étoiles à travers l’analyse des spectres d’absorptions et d’émissions.
