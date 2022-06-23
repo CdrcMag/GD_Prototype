@@ -1,5 +1,6 @@
 # Prototype Game Design 
-## Introduction à la spectroscopie astronomique
+
+Introduction à la spectroscopie astronomique
 
 Cédric Maggay - Ludus Académie - Strasbourg - 2022
 
